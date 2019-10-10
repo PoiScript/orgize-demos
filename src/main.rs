@@ -14,19 +14,19 @@ fn index() -> HttpResponse {
 <form action="/export" method="post">
     <p>Input content:</p>
     <div>
-        <textarea name="content" rows="10" cols="100">
+<textarea name="content" rows="10" cols="50">
 * DONE Title :tag:
 
 #+BEGIN_SRC rust
 println!("Hello");
 #+END_SRC
-        </textarea>
+</textarea>
     </div>
     <p>Output format:</p>
-        <input type="radio" name="format" value="json" checked> Json<br>
-        <input type="radio" name="format" value="html"> HTML<br>
-        <input type="radio" name="format" value="org"> Org<br>
-        <input type="radio" name="format" value="syntect"> HTML with highlight<br>
+    <input type="radio" name="format" value="json" checked> Json<br>
+    <input type="radio" name="format" value="html"> HTML<br>
+    <input type="radio" name="format" value="org"> Org<br>
+    <input type="radio" name="format" value="syntect"> HTML with highlight<br>
     <p>Highlight theme:</p>
     <select name="theme">
         <option value="InspiredGitHub" selected="selected">InspiredGitHub</option>

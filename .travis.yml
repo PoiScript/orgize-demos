@@ -1,0 +1,23 @@
+language: rust
+
+rust:
+  - stable
+
+cache: cargo
+
+before_script:
+  - rustup component add rustfmt-preview
+
+script:
+  - cargo fmt --all -- --check
+  - cargo test --all-features
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: orgize
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
